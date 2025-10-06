@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Desarrollador Full-Stack</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background-color: #f8f9fa;
+            font-size: 13px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 15px auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .header .title {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            justify-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .left-column {
+            background: #f8f9fa;
+            padding: 25px;
+            border-right: 1px solid #e9ecef;
+        }
+
+        .right-column {
+            padding: 25px;
+        }
+
+        .left-section, .right-section {
+            margin-bottom: 15px;
+        }
+
+        .left-section h2, .right-section h2 {
+            color: #2c3e50;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #3498db;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            font-weight: 600;
+        }
+
+        .profile-text {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #555;
+            text-align: justify;
+        }
+
+        .experience-item {
+            margin-bottom: 12px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #3498db;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .project-item {
+            margin-bottom: 12px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #e74c3c;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 12px;
+            margin-bottom: 1px;
+            line-height: 1.2;
+        }
+
+        .company {
+            color: #7f8c8d;
+            font-size: 10px;
+            font-style: italic;
+            line-height: 1.2;
+        }
+
+        .date {
+            color: #95a5a6;
+            font-size: 9px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .skills-grid {
+            display: block;
+            margin-top: 8px;
+        }
+
+        .skill-category {
+            margin-bottom: 12px;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-list li {
+            padding: 2px 0;
+            font-size: 10px;
+            color: #34495e;
+            position: relative;
+            padding-left: 10px;
+            line-height: 1.3;
+        }
+
+        .skill-list li:before {
+            content: "•";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #e8f4fd 0%, #d6eaf8 100%);
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        .left-section {
+            margin-bottom: 20px;
+        }
+
+        .left-section h2 {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+        }
+
+        .right-section {
+            margin-bottom: 25px;
+        }
+
+        .experience-item p, .experience-item ul {
+            font-size: 9px;
+            line-height: 1.3;
+            color: #34495e;
+            margin: 4px 0;
+            text-align: justify;
+        }
+
+        .experience-item ul {
+            padding-left: 12px;
+        }
+
+        .experience-item li {
+            margin-bottom: 2px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .left-column, .right-column {
+                width: 100%;
+                padding: 0;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .header p {
+                font-size: 11px;
+            }
+            
+            .contact-item {
+                font-size: 9px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        /* Print styles for PDF generation */
+        @media print {
+            body {
+                font-size: 9px;
+                line-height: 1.2;
+            }
+            
+            .container {
+                max-width: none;
+                padding: 10px;
+                box-shadow: none;
+            }
+            
+            .header {
+                padding: 10px 0;
+            }
+            
+            .experience-item, .project-item {
+                break-inside: avoid;
+                margin-bottom: 8px;
+                padding: 8px;
+            }
+            
+            .left-section, .right-section {
+                break-inside: avoid;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Martín Gabriel Godínez Morales</h1>
+            <div class="title">Desarrollador Full-Stack</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>gmoficial16@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+52 (418) 159-7139</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Dolores Hidalgo, Guanajuato, México</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <span>www.linkedin.com/in/martin-gabriel-godinez-morales-39a48327b</span>
+                </div>
+                <div class="contact-item">
+                    <span>🐙</span>
+                    <span>github.com/GabrielGM16</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <span>portafolio-gm-ogvv.onrender.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-column">
+                <div class="left-section">
+                    <h2>Perfil Profesional</h2>
+                    <p class="profile-text">
+                        Desarrollador Full-Stack con experiencia sólida en el desarrollo de <span class="highlight">sistemas ERP empresariales</span> 
+                        y aplicaciones web robustas. Especializado en PHP, JavaScript y tecnologías modernas de desarrollo web. 
+                        Actualmente desarrollando desde cero el sistema SARPA para Envasadora Aguida, 
+                        un sistema ERP complejo para la industria alimentaria con más de 12 módulos integrados. Apasionado por crear 
+                        soluciones tecnológicas eficientes que optimizan procesos empresariales y mejoran la productividad organizacional.
+                    </p>
+                </div>
+
+                <div class="left-section">
+                    <h2>Habilidades Técnicas</h2>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Lenguajes de Programación</h3>
+                            <ul class="skill-list">
+                                <li>PHP (Avanzado)</li>
+                                <li>JavaScript (Avanzado)</li>
+                                <li>HTML5 & CSS3</li>
+                                <li>SQL</li>
+                                <li>Python (Intermedio)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Frameworks & Librerías</h3>
+                            <ul class="skill-list">
+                                <li>Bootstrap</li>
+                                <li>jQuery</li>
+                                <li>Composer</li>
+                                <li>TCPDF / mPDF</li>
+                                <li>PHPOffice</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Bases de Datos</h3>
+                            <ul class="skill-list">
+                                <li>MySQL (Avanzado)</li>
+                                <li>MariaDB</li>
+                                <li>Diseño de BD</li>
+                                <li>Optimización de consultas</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Tecnologías Web</h3>
+                            <ul class="skill-list">
+                                <li>Progressive Web Apps (PWA)</li>
+                                <li>Responsive Design</li>
+                                <li>AJAX</li>
+                                <li>REST APIs</li>
+                                <li>Service Workers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Herramientas & Otros</h3>
+                            <ul class="skill-list">
+                                <li>Git & GitHub</li>
+                                <li>XAMPP</li>
+                                <li>Apache</li>
+                                <li>Vercel</li>
+                                <li>Sistemas ERP</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Metodologías</h3>
+                            <ul class="skill-list">
+                                <li>Desarrollo Ágil</li>
+                                <li>Arquitectura Modular</li>
+                                <li>Control de Versiones</li>
+                                <li>Testing & Debugging</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="left-section">
+                    <h2>Certificaciones y Cursos</h2>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Certificaciones Técnicas</h3>
+                            <ul class="skill-list">
+                                <li>Desarrollo Web Full-Stack (Platzi)</li>
+                                <li>PHP y MySQL Avanzado (Udemy)</li>
+                                <li>Sistemas ERP y Gestión Empresarial</li>
+                                <li>JavaScript Moderno y Frameworks</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Certificaciones Cisco</h3>
+                            <ul class="skill-list">
+                                <li>IT Essentials: PC Hardware and Software (2022)</li>
+                                <li>Curso Linux (2023)</li>
+                                <li>Curso Introducción a las Redes (2023)</li>
+                                <li>Ciberseguridad Esencial (2024)</li>
+                                <li>Introducción a la Ciberseguridad (2024)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Cursos Complementarios</h3>
+                            <ul class="skill-list">
+                                <li>Desarrollo de Progressive Web Apps</li>
+                                <li>Optimización de Bases de Datos</li>
+                                <li>Arquitectura de Software</li>
+                                <li>Metodologías Ágiles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="left-section">
+                    <h2>Idiomas</h2>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <ul class="skill-list">
+                                <li>Español (Nativo)</li>
+                                <li>Inglés (Intermedio - Técnico)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="right-section">
+                    <h2>Experiencia Laboral</h2>
+
+
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Desarrollador Full-Stack</div>
+                            <div class="company">Envasadora Aguida</div>
+                        </div>
+                        <div class="date">Enero 2025 - Actualidad</div>
+                    </div>
+                    <p><strong>Ubicación:</strong> San Luis de la Paz, Guanajuato</p>
+                    <ul>
+                        <li>Diseño y desarrollo de un sistema empresarial integral para la gestión de reportes y administración interna</li>
+                        <li>Implementación de múltiples módulos para distintos perfiles de usuario y flujos de trabajo</li>
+                        <li>Responsable de montar y mantener el servidor (Linux + Apache)</li>
+                        <li>Desarrollo completo del sistema en PHP con base de datos MySQL</li>
+                        <li>Participación adicional en proyectos paralelos desarrollados también en PHP</li>
+                        <li><strong>Tecnologías:</strong> PHP, MySQL, HTML/CSS, JavaScript, Apache, Linux</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Consultor Técnico - Análisis Digital</div>
+                            <div class="company">Despacho Jurídico</div>
+                        </div>
+                        <div class="date">2024 - 2025</div>
+                    </div>
+                    <p><strong>Contexto:</strong> Proceso Legal - Consultoría Técnica Digital</p>
+                    <ul>
+                        <li>Consultoría técnica especializada para apoyo en proceso legal</li>
+                        <li>Análisis y revisión de información digital extraída de dispositivos móviles</li>
+                        <li>Evaluación técnica de datos de geolocalización y metadatos</li>
+                        <li>Elaboración de reportes técnicos de análisis de información</li>
+                        <li>Apoyo técnico especializado a equipos legales en interpretación de datos</li>
+                        <li><strong>Especialidades:</strong> Análisis de información digital, Consultoría técnica, Evaluación de datos móviles, Comunicación técnica-legal</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Practicante en Innovación Tecnológica</div>
+                            <div class="company">Optimen</div>
+                        </div>
+                        <div class="date">Abril 2023 - Octubre 2023</div>
+                    </div>
+                    <p><strong>Ubicación:</strong> León, Guanajuato</p>
+                    <ul>
+                        <li>Integración en el área de innovación, desarrollando soluciones con React y Python</li>
+                        <li>Participación en proyectos de IoT e infraestructura con AWS</li>
+                        <li>Aplicación de análisis de datos geoespaciales y vectores para el sector hídrico y aeroespacial</li>
+                        <li>Apoyo en pruebas, prototipado y mejora de sistemas para clientes del sector industrial</li>
+                    </ul>
+                </div>
+
+                <div class="right-section">
+                    <h2>Educación</h2>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="job-title">Ingeniería en Desarrollo y Gestión de Software</div>
+                                <div class="company">Universidad Tecnológica del Norte de Guanajuato</div>
+                            </div>
+                            <div class="date">Agosto 2023 - Abril 2025</div>
+                        </div>
+                        <p>Especialización en desarrollo de software empresarial, gestión de proyectos tecnológicos y arquitectura de sistemas.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="job-title">TSU en Desarrollo de Software Multiplataforma</div>
+                                <div class="company">Universidad Tecnológica del Norte de Guanajuato</div>
+                            </div>
+                            <div class="date">Agosto 2021 - Agosto 2023</div>
+                        </div>
+                        <p>Título obtenido en 2023. Especialización en desarrollo de aplicaciones web, móviles y de escritorio con enfoque multiplataforma.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="job-title">Bachillerato Tecnológico</div>
+                                <div class="company">Institución Educativa</div>
+                            </div>
+                            <div class="date">2018 - 2021</div>
+                        </div>
+                        <p>Miembro del equipo de robótica (2019 - 2021). Participación en competencias y desarrollo de proyectos tecnológicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
