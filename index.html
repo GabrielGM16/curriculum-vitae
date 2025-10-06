@@ -49,16 +49,35 @@
 
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            justify-items: center;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 6px;
-            font-size: 12px;
+            font-size: 11px;
+            padding: 3px 0;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            min-width: 80px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-value {
+            color: rgba(255, 255, 255, 0.85);
+            flex: 1;
         }
 
         .main-content {
@@ -259,8 +278,17 @@
                 font-size: 11px;
             }
             
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
             .contact-item {
-                font-size: 9px;
+                font-size: 10px;
+            }
+            
+            .contact-label {
+                min-width: 70px;
             }
         }
 
@@ -324,29 +352,33 @@
             <h1>Martín Gabriel Godínez Morales</h1>
             <div class="title">Desarrollador Full-Stack</div>
             <div class="contact-info">
-                <div class="contact-item">
-                    <span>Correo</span>
-                    <span>gmoficial16@gmail.com</span>
+                <div class="contact-column">
+                    <div class="contact-item">
+                        <span class="contact-label">Correo:</span>
+                        <span class="contact-value">gmoficial16@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Teléfono:</span>
+                        <span class="contact-value">+52 (418) 159-7139</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Ubicación:</span>
+                        <span class="contact-value">Dolores Hidalgo, Guanajuato, México</span>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <span>Telefono</span>
-                    <span>+52 (418) 159-7139</span>
-                </div>
-                <div class="contact-item">
-                    <span>Ubicación</span>
-                    <span>Dolores Hidalgo, Guanajuato, México</span>
-                </div>
-                <div class="contact-item">
-                    <span>LinkedIn</span>
-                    <span>www.linkedin.com/in/martin-gabriel-godinez-morales-39a48327b</span>
-                </div>
-                <div class="contact-item">
-                    <span>GitHub</span>
-                    <span>github.com/GabrielGM16</span>
-                </div>
-                <div class="contact-item">
-                    <span>Portafolio</span>
-                    <span>portafolio-gm-ogvv.onrender.com</span>
+                <div class="contact-column">
+                    <div class="contact-item">
+                        <span class="contact-label">LinkedIn:</span>
+                        <span class="contact-value">www.linkedin.com/in/martin-gabriel-godinez-morales-39a48327b</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">GitHub:</span>
+                        <span class="contact-value">github.com/GabrielGM16</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Portafolio:</span>
+                        <span class="contact-value">portafolio-gm-ogvv.onrender.com</span>
+                    </div>
                 </div>
             </div>
         </div>
